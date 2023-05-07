@@ -1,43 +1,22 @@
 import java.util.Scanner;
-import java.util.Arrays;
-class Main {
-  public static void main(String[] args) {
-       int n,r,k=0,t=1,total=1,a=0;
-    Scanner inp = new Scanner(System.in);
-  System.out.print("Enter First number: ");
-    n= inp.nextInt();
 
-   System.out.print("Enter second number");
-    r= inp.nextInt();
-      int [] numbers= new int[r];
-      int [] num = new int[r];
-    
-    for (int i=1; i<=r ; i++)
-    {
-      
-      numbers [k] = n;
-      n-=1;
-      k++;
-      
+public class Combination {
+    public static void main(String[] args) {
+        int n, r, i, f, combination, nfac = 1, rfac = 1, cfac = 1;
+        Scanner inp = new Scanner(System.in);
+        System.out.println("n değeri girin: ");
+        n = inp.nextInt();
+        System.out.println("r değeri girin: ");
+        r = inp.nextInt();
+        f = n - r;
+        for (i = 1; i <= n; i++)
+            nfac = nfac * i;
+        for (i = 1; i < r; i++)
+            rfac = rfac * i;
+        for (i = 1; i < f ; i++)
+            cfac = cfac * i;
+        kombinasyon = nfac / (rfac * cfac);
+        System.out.println("combination ("+n+","+r+"): " + combination);
     }
-    for (int j=0; j<r ; j++)
-      {
-        t*=numbers [j];
-      }
-    
-    for (int i=r; i >= 1 ; i--)
-    {
-      
-      num [a] = i;
-      a++;
-      
-    }
-    for (int j=0; j<r ; j++)
-      {
-        total*=num [j];
-      }
-    int c = t/total;
-    System.out.print("Combination: " + c);
-    
-  }
+
 }
