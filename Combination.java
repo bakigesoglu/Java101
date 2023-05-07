@@ -15,7 +15,7 @@ public class Combination {
             rfac = rfac * i;
         for (i = 1; i < f ; i++)
             cfac = cfac * i;
-        kombinasyon = nfac / (rfac * cfac);
+        combination = nfac / (rfac * cfac);
         System.out.println("combination ("+n+","+r+"): " + combination);
     }
 
