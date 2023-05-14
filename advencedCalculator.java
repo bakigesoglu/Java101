@@ -41,7 +41,7 @@ public class advencedCalculator {
         while (true) {
             System.out.print(i++ + ". number : ");
             number = inp.nextInt();
-            String exit = inp.nextLine();
+
             if (number ==0) {
                 break;
             }
@@ -82,7 +82,7 @@ public class advencedCalculator {
         System.out.println("Result: "+ result);
     }
     static  int f(int n){
-        Scanner inp = new Scanner(System.in);
+
         if (n==1) {
             return 1;
         }
@@ -104,7 +104,7 @@ public class advencedCalculator {
     }
     static void rect() {
         Scanner inp = new Scanner(System.in);
-        int shortEdge,longEdge,perimeter=0,area=1;
+        int shortEdge,longEdge,perimeter,area;
 
         System.out.print("Enter Short Edge length of rectangle : ");
         shortEdge = inp.nextInt();
@@ -122,31 +122,24 @@ public class advencedCalculator {
 
     public static void main (String [] Args) {
         Scanner inp = new Scanner(System.in);
-        int select,result;
+        int select;
 
         do {
             System.out.print("Addition -> 1\nSubtraction -> 2\nMultiplication -> 3\nDivision -> 4\nExponent-> 5\nFactorial -> 6\nMod -> 7\nRectangle perimeter and area -> 8");
             select = inp.nextInt();
             switch (select) {
-                case 1 : plus();
-                break;
-                case 2 : minus();
-                break;
-                case 3 : multiply();
-                break;
-                case 4 : divide();
-                break;
-                case 5 : power();
-                break;
-                case 6 :
+                case 1 -> plus();
+                case 2 -> minus();
+                case 3 -> multiply();
+                case 4 -> divide();
+                case 5 -> power();
+                case 6 -> {
                     System.out.print("Enter a number: ");
-                    int n= inp.nextInt();
+                    int n = inp.nextInt();
                     System.out.println(f(n));
-                break;
-                case 7 : mod();
-                break;
-                case 8 : rect ();
-                break;
+                }
+                case 7 -> mod();
+                case 8 -> rect();
             }
         } while (select!=0);
         System.out.println("See you soon...");
