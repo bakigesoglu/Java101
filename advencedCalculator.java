@@ -19,19 +19,19 @@ public class advencedCalculator {
     }
     System.out.println("Result: " +result);
     }
-    static void minus() { // hata var
-        int number,result=0, i=1;
+    static void minus() {
+        int number,result=0;
         Scanner inp = new Scanner(System.in);
-        while(true) {
-            System.out.print(i++ + " . number : ");
-            number = inp.nextInt();
-
-
-            if (number == 0)
-            {
-                break;
-            }
-            result-=number;
+        System.out.print("How many numbers to enter ? : ");
+        int counter = inp.nextInt();
+         for (int i=1; i<=counter;i++) {
+             System.out.print(i + ". number : ");
+             number = inp.nextInt();
+             if(i==1){
+                 result+=number;
+                 continue;
+             }
+             result-=number;
         }
         System.out.println("Result : " + result);
     }
@@ -41,31 +41,40 @@ public class advencedCalculator {
         while (true) {
             System.out.print(i++ + ". number : ");
             number = inp.nextInt();
+            if (number ==1)
+            {
+                break;
+            }
 
             if (number ==0) {
-                break;
+                result=0;
             }
             result *= number;
         }
         System.out.println("Result : "+ result);
     }
-    static void divide() { // hata var.
+    static void divide() {
         Scanner inp = new Scanner(System.in);
-        int number,result=0,i=1,temp;
-        while (true){
-            System.out.println(i++ +". number: ");
-            number = inp.nextInt();
-
-            temp= number;
-            if ( temp == 0)
-            {
-
-                break;
+        System.out.print("How many numbers to enter ? : ");
+        int counter = inp.nextInt();
+        double number ,result=0.0;
+        for (int i=1; i<=counter ; i++) {
+            System.out.print(i + ". number: ");
+            number = inp.nextDouble();
+            if (i != 1 && number == 0) {
+                System.out.print("İnfinity");
+                continue;
             }
+            if (i == 1) {
+                result = number;
+                continue;
+            }
+            result /= number;
+        }
+        System.out.println("Result : "+ result);
 
-            result = temp / number;
-        } System.out.println("Result: " + result);
-    }
+        }
+
 
     static void power() {
         Scanner inp = new Scanner(System.in);
